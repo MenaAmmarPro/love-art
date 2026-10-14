@@ -3,7 +3,7 @@
 A gallery of **100 artworks, drawn by code**, each one made for Himena
 ("Mena"). Part of the **Love for Mena** collection.
 
-**Live:** https://ammar49-cyber.github.io/love-art/
+**Live:** https://menaammarpro.github.io/love-art/
 
 ## What it is
 
@@ -49,4 +49,4 @@ Static site, deployed with GitHub Pages from `main`.
 ## License
 
 Creative Commons BY-NC-ND 4.0 — see [`LICENSE`](LICENSE).
-© 2026 Ammar (ammar49-cyber). Made with care for Himena.
+© 2026 Ammar (MenaAmmarPro). Made with care for Himena.
