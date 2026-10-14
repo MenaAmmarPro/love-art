@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="One hundred little artworks, drawn by code, each one for Himena.">
+  <title>One Hundred Little Artworks ✦ for Himena</title>
+  <link rel="canonical" href="https://ammar49-cyber.github.io/love-art/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Hundred Little Artworks — for Himena">
+  <meta property="og:title" content="One Hundred Little Artworks ✦ for Himena">
+  <meta property="og:description" content="100 pieces, drawn by code, each one for you.">
+  <meta property="og:url" content="https://ammar49-cyber.github.io/love-art/">
+  <meta property="og:image" content="https://ammar49-cyber.github.io/love-art/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/palettes.js" defer></script>
+  <script src="js/art-engine.js" defer></script>
+  <script src="js/collection-data.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="For Himena">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body class="art-page">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">✦ For Himena</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">The gallery</a>
+      <a href="#about">About</a>
+      <a href="https://ammar49-cyber.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero art-hero">
+      <p class="eyebrow">FOR HIMENA — BECAUSE YOU LOVE ART</p>
+      <div class="moon" aria-hidden="true">✦</div>
+      <p class="small-caption">Every piece here was drawn by code, not by hand.</p>
+      <h1>One hundred<br><span>little artworks.</span></h1>
+      <p class="hero-description">
+        You love art, so I made you a hundred pieces of it — no pens, no paint,
+        just patterns and love. White, like your favourite colour. Open any one,
+        and it's yours to keep.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#gallery">See all 100 <span>✧</span></a>
+        <button class="button button-ghost" id="surprise" type="button">Surprise me ↗</button>
+      </div>
+      <p class="signature">From Ammar, to you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="about">
+      <p class="eyebrow">WHY THIS EXISTS</p>
+      <h2>Since <span>before we were born.</span></h2>
+      <p class="section-lead">
+        We met on Free Fire, in two different countries — Romania and Pakistan —
+        and yet it feels like we have known each other since forever. I'm Ammar;
+        you're Himena, my Mena. You love white, you love pizza, you love nature,
+        and most of all you love art. So here is art: one hundred little pieces,
+        each one a different shape of the same thing — you.
+      </p>
+      <div class="about-grid">
+        <div class="about-card"><span>♡</span><h3>White</h3><p>Your favourite colour is the ground every piece starts from.</p></div>
+        <div class="about-card"><span>🍕</span><h3>Pizza</h3><p>Warm tones sneak into a few — a quiet wink for you.</p></div>
+        <div class="about-card"><span>❀</span><h3>Nature</h3><p>Meadows, mountains, petals, rain — the world you love.</p></div>
+        <div class="about-card"><span>✎</span><h3>Art</h3><p>Ten styles, a hundred seeds. All of it, made for you.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <p class="eyebrow">THE COLLECTION</p>
+      <h2>All <span>one hundred.</span></h2>
+
+      <div class="gallery-toolbar">
+        <div class="chips" id="chips" role="group" aria-label="Filter art by theme"></div>
+        <span class="gallery-count" id="gallery-count"></span>
+      </div>
+
+      <div class="gallery" id="gallery-grid"></div>
+      <p class="gallery-empty" id="gallery-empty" hidden>Nothing here yet — try another filter.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Himena</p>
+    <p class="footer-small">Ammar ✦ a hundred shapes of one feeling</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Artwork">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
+      <canvas id="lightbox-canvas" class="lightbox-canvas" width="768" height="768"></canvas>
+      <div class="lightbox-caption">
+        <div>
+          <span class="lightbox-num" id="lightbox-num"></span>
+          <h3 class="lightbox-title" id="lightbox-title"></h3>
+          <span class="lightbox-meta" id="lightbox-meta"></span>
+        </div>
+        <div class="lightbox-actions">
+          <button class="button button-ghost" id="lightbox-prev" type="button" aria-label="Previous">←</button>
+          <button class="button button-primary" id="lightbox-download" type="button">Save as image</button>
+          <button class="button button-ghost" id="lightbox-next" type="button" aria-label="Next">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

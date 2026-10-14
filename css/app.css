@@ -1,0 +1,260 @@
+/* love-art — page-specific styles (built on css/theme.css) */
+
+.art-hero {
+  min-height: 520px;
+}
+
+.art-hero .moon {
+  font-size: clamp(3rem, 10vw, 5rem);
+}
+
+.art-hero h1 {
+  line-height: 1.02;
+}
+
+.section-lead {
+  max-width: 660px;
+  margin: 0 auto 26px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ---------- toolbar ---------- */
+.gallery-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 1180px;
+  margin: 0 auto 22px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 7px 15px;
+  font: inherit;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.chip:hover {
+  background: rgba(255, 159, 207, 0.14);
+  color: var(--pink);
+}
+
+.chip.is-active {
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: #10061f;
+  border-color: transparent;
+}
+
+.gallery-count {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+/* ---------- gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.art-card {
+  margin: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+  transform: translateZ(0);
+  transition: transform 0.18s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.art-card:hover,
+.art-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.5), 0 0 0 2px var(--pink);
+}
+
+.art-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: #ffffff;
+  border-bottom: 1px solid #ececf2;
+}
+
+.art-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.art-num {
+  color: #b08fa0;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.art-title {
+  color: #2b2440;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.gallery-empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* ---------- about grid ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.about-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+  text-align: center;
+}
+
+.about-card span:first-child {
+  font-size: 1.6rem;
+}
+
+.about-card h3 {
+  margin: 10px 0 6px;
+  color: var(--text);
+}
+
+.about-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ---------- lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(4, 5, 15, 0.82);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  z-index: 60;
+}
+
+.lightbox[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-inner {
+  width: min(760px, 94vw);
+  max-height: 92vh;
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.lightbox-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(10, 10, 20, 0.6);
+  color: var(--text);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 159, 207, 0.2);
+  color: var(--pink);
+}
+
+.lightbox-caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.lightbox-num {
+  color: var(--pink);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.lightbox-title {
+  margin: 4px 0 4px;
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+.lightbox-meta {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.lightbox-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lightbox-actions .button {
+  padding: 9px 16px;
+}
